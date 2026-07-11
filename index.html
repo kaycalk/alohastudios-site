@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ═══════════════════════════════════════════════════════════════════
+     ALOHA STUDIO PRODUCTIONS — index.html  (v2 — studio site)
+     ───────────────────────────────────────────────────────────────────
+     EVERYTHING YOU'LL EDIT:
+
+     1. PHOTOS — drop images into an /images folder next to this file:
+          images/hero.mp4 + hero-01..04.jpg   INCLUDED — hero video + photo loop
+          images/brand-01.jpg ... brand-03.jpg    product-in-environment work
+          images/stay-01.jpg  ... stay-03.jpg     hospitality work
+          images/project-01.jpg, project-02.jpg   spec campaign hero frames
+          images/passion.jpg         conservation / wild-places frame
+          images/about.jpg           the two of you, on location (vertical)
+        Placeholders show in each slot until the real file exists.
+
+     2. FIELD NOTES — captions under images (location · time · lens).
+        Search "field-note" and rewrite to match your shots.
+
+     3. SPEC CAMPAIGNS — search "EDIT-PROJECTS". Rename the campaigns,
+        rewrite the one-line briefs. Keep the "Studio-initiated" label —
+        it's what makes this honest and it reads as confidence, not lack.
+
+     4. PASSION PROJECT — search "EDIT-PASSION". I named it "Kīpuka"
+        (a real term: an island of old-growth forest spared by a lava
+        flow). Rename it to whatever your project actually becomes.
+
+     5. BIO — search "EDIT-BIO".
+
+     6. CONTACT — email is alohastudioproductions@gmail.com, set in
+        3 places. Form posts through formsubmit.co (free, no account —
+        the first submission emails you a one-click activation link).
+     ═══════════════════════════════════════════════════════════════ -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aloha Studio Productions — Visual Production Studio, Hawaiʻi</title>
+<meta name="description" content="A visual production studio on the Island of Hawaiʻi. Brand campaigns shot in the elements, and photography for hotels, resorts, and vacation rentals across the islands.">
+<meta property="og:title" content="Aloha Studio Productions">
+<meta property="og:description" content="Brand content shot in the elements. Hospitality photography across the Hawaiian Islands.">
+<meta property="og:image" content="images/hero-01.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..640;1,9..144,340..640&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F3F0E8;
+  --sand:#E9E2D3;
+  --sand-deep:#DDD3BE;
+  --basalt:#1E211F;      /* dark world — brand content */
+  --basalt-soft:#2A2E2B;
+  --ink:#2B2A25;
+  --ink-soft:#5C594E;
+  --fog:rgba(243,240,232,.62);
+  --kelp:#43655C;
+  --seaglass:#7FA095;
+  --coral:#C4744F;
+  --hairline:rgba(43,42,37,.16);
+  --hairline-dark:rgba(243,240,232,.14);
+  --max:1240px;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Instrument Sans",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:var(--sans);background:var(--bone);color:var(--ink);
+  line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;
+}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+::selection{background:var(--seaglass);color:var(--bone)}
+
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--kelp)}
+h1,h2,h3{font-family:var(--serif);font-weight:420;line-height:1.06;letter-spacing:-.015em}
+h1{font-size:clamp(2.9rem,7vw,5.6rem)}
+h2{font-size:clamp(2rem,4.2vw,3.2rem)}
+h3{font-size:1.4rem;line-height:1.25}
+.lede{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--ink-soft);max-width:36em}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+section{padding:clamp(76px,10vw,140px) 0}
+.section-head{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(36px,5vw,60px)}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--seaglass);outline-offset:3px;border-radius:2px}
+
+/* ── header ─────────────────────────────────────── */
+header{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--bone) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--hairline);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:1.15rem;font-weight:500;text-decoration:none;letter-spacing:-.01em}
+.logo em{font-style:italic;color:var(--kelp)}
+nav ul{display:flex;gap:clamp(18px,3vw,34px);list-style:none}
+nav a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--ink-soft);transition:color .2s}
+nav a:hover,nav a:focus-visible{color:var(--ink)}
+.nav-cta{font-size:.9rem;font-weight:600;text-decoration:none;color:var(--bone);background:var(--ink);padding:9px 18px;border-radius:999px;transition:background .2s}
+.nav-cta:hover{background:var(--kelp)}
+@media(max-width:760px){nav ul{display:none}}
+
+/* ── buttons ────────────────────────────────────── */
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;padding:13px 26px;border-radius:999px;transition:all .2s}
+.btn-solid{background:var(--bone);color:var(--ink)}
+.btn-solid:hover{background:var(--sand)}
+.btn-ghost{border:1px solid rgba(243,240,232,.55);color:var(--bone)}
+.btn-ghost:hover{background:rgba(243,240,232,.12)}
+.btn-dark{background:var(--ink);color:var(--bone)}
+.btn-dark:hover{background:var(--kelp)}
+.btn-line{border:1px solid var(--hairline);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+
+/* ── placeholders (auto-replaced by real images) ── */
+.ph{
+  background:
+    repeating-linear-gradient(-45deg,transparent 0 22px,rgba(43,42,37,.04) 22px 23px),
+    linear-gradient(160deg,var(--sand) 0%,var(--sand-deep) 100%);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
+}
+.ph span{font-size:.82rem;letter-spacing:.05em;color:var(--ink-soft);max-width:24em;line-height:1.5}
+.ph span strong{display:block;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;margin-bottom:6px;color:var(--kelp)}
+.dark .ph{
+  background:
+    repeating-linear-gradient(-45deg,transparent 0 22px,rgba(243,240,232,.045) 22px 23px),
+    linear-gradient(160deg,#262A27 0%,#1A1D1B 100%);
+}
+.dark .ph span{color:var(--fog)}
+.dark .ph span strong{color:var(--seaglass)}
+
+/* ── hero ───────────────────────────────────────── */
+.hero{padding:0}
+.hero-frame{position:relative;height:min(92vh,900px);min-height:560px;overflow:hidden;background:var(--basalt)}
+.hero-media{position:absolute;inset:0}
+.hm{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;background-size:cover;background-position:center}
+video.hm{object-fit:cover;width:100%;height:100%}
+.hm.active{opacity:1}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,23,21,.72) 0%,rgba(20,23,21,.18) 48%,rgba(20,23,21,.1) 100%)}
+.hero-copy{position:absolute;left:0;right:0;bottom:0;padding:0 clamp(20px,4vw,48px) clamp(40px,6vw,80px);max-width:var(--max);margin:0 auto;color:var(--bone)}
+.hero-copy .eyebrow{color:var(--sand)}
+.hero-copy h1{max-width:11em;margin:14px 0 18px}
+.hero-copy h1 em{font-style:italic;color:var(--seaglass)}
+.hero-sub{max-width:34em;color:var(--fog);font-size:clamp(1rem,1.5vw,1.15rem);margin-bottom:26px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* ── the split — two service lines ──────────────── */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.split a{position:relative;display:flex;align-items:flex-end;text-decoration:none;overflow:hidden;min-height:420px}
+.split .ph,.split img{position:absolute;inset:0}
+.split img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.split a:hover img{transform:scale(1.03)}
+.split-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,23,21,.7),rgba(20,23,21,.05) 55%)}
+.split-copy{position:relative;padding:clamp(26px,3vw,44px);color:var(--bone)}
+.split-copy .eyebrow{color:var(--sand)}
+.split-copy h2{margin:10px 0 8px;font-size:clamp(1.7rem,2.8vw,2.4rem)}
+.split-copy p{color:var(--fog);font-size:.95rem;max-width:26em}
+.split-copy .go{display:inline-block;margin-top:14px;font-weight:600;font-size:.9rem;border-bottom:1px solid rgba(243,240,232,.4);padding-bottom:2px}
+.split a:hover .go{border-color:var(--seaglass)}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+
+/* ── work sections ──────────────────────────────── */
+.dark{background:var(--basalt);color:var(--bone)}
+.dark .eyebrow{color:var(--seaglass)}
+.dark .lede{color:var(--fog)}
+.dark .field-note{color:var(--fog)}
+.dark .field-note b{color:var(--bone)}
+
+.work-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(14px,2vw,24px)}
+.piece{display:flex;flex-direction:column;gap:10px}
+.piece .frame{overflow:hidden;border-radius:3px;position:relative;background:var(--sand-deep)}
+.dark .piece .frame{background:var(--basalt-soft)}
+.piece .frame img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.piece:hover .frame img{transform:scale(1.035)}
+.p-wide{grid-column:span 4}.p-tall{grid-column:span 2}.p-half{grid-column:span 3}
+.p-wide .frame{aspect-ratio:3/1.9}
+.p-tall .frame{aspect-ratio:4/5.1}
+.p-half .frame{aspect-ratio:3/2}
+.field-note{display:flex;gap:10px;align-items:baseline;font-size:.78rem;letter-spacing:.05em;color:var(--ink-soft)}
+.field-note b{font-weight:600;color:var(--ink);letter-spacing:.1em}
+.field-note .dot{color:var(--seaglass)}
+@media(max-width:820px){
+  .p-wide,.p-tall,.p-half{grid-column:span 6}
+  .p-wide .frame,.p-tall .frame,.p-half .frame{aspect-ratio:4/3}
+}
+
+/* capability chips */
+.caps{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(30px,4vw,44px)}
+.cap{border:1px solid var(--hairline-dark);border-radius:999px;padding:9px 18px;font-size:.9rem;color:var(--fog)}
+.light-caps .cap{border-color:var(--hairline);color:var(--ink-soft)}
+
+/* ── spec campaigns ─────────────────────────────── */
+.projects{background:var(--sand);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.5vw,28px)}
+.proj{display:flex;flex-direction:column;gap:0;border:1px solid var(--hairline);border-radius:6px;overflow:hidden;background:var(--bone);text-decoration:none;transition:border-color .2s}
+.proj:hover{border-color:var(--ink)}
+.proj .frame{aspect-ratio:16/9.5;position:relative;overflow:hidden;background:var(--sand-deep)}
+.proj .frame img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.proj:hover .frame img{transform:scale(1.03)}
+.proj-body{padding:clamp(20px,2.5vw,30px)}
+.proj-tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);border:1px solid currentColor;border-radius:999px;padding:4px 12px;margin-bottom:14px}
+.proj h3{margin-bottom:8px}
+.proj p{font-size:.95rem;color:var(--ink-soft)}
+@media(max-width:820px){.proj-grid{grid-template-columns:1fr}}
+
+/* ── passion project ────────────────────────────── */
+.passion{padding:0}
+.passion-frame{position:relative;min-height:640px;display:flex;align-items:flex-end;overflow:hidden;background:var(--basalt)}
+.passion-frame .ph,.passion-frame img{position:absolute;inset:0}
+.passion-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,23,21,.78),rgba(20,23,21,.08) 60%)}
+.passion-copy{position:relative;max-width:var(--max);margin:0 auto;width:100%;padding:0 clamp(20px,4vw,48px) clamp(44px,6vw,80px);color:var(--bone)}
+.passion-copy .eyebrow{color:var(--seaglass)}
+.passion-copy h2{margin:12px 0 14px}
+.passion-copy h2 em{font-style:italic}
+.passion-copy p{max-width:34em;color:var(--fog)}
+
+/* ── about ──────────────────────────────────────── */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,80px);align-items:center}
+.about-photo{border-radius:4px;overflow:hidden;aspect-ratio:4/5;background:var(--sand-deep);position:relative}
+.about-photo .ph,.about-photo img{position:absolute;inset:0}
+.about-copy p{margin-bottom:1.1em;color:var(--ink-soft)}
+.about-copy p.first{color:var(--ink);font-size:1.08rem}
+.about-copy p strong{color:var(--ink)}
+.sig{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--kelp);margin-top:8px}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:480px;aspect-ratio:4/5;height:auto;min-height:420px}}
+
+/* ── contact ────────────────────────────────────── */
+.contact{background:var(--basalt);color:var(--bone)}
+.contact .eyebrow{color:var(--seaglass)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,90px)}
+.contact h2 em{font-style:italic;color:var(--coral)}
+.contact .lede{color:var(--fog)}
+.contact-meta{margin-top:34px;display:flex;flex-direction:column;gap:14px;font-size:.98rem}
+.contact-meta a{color:var(--bone);text-decoration:none;border-bottom:1px solid rgba(243,240,232,.3);width:fit-content;padding-bottom:2px;transition:border-color .2s}
+.contact-meta a:hover{border-color:var(--seaglass)}
+.contact-meta .label{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,240,232,.5);display:block;margin-bottom:4px}
+form{display:flex;flex-direction:column;gap:16px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,240,232,.6);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;background:rgba(243,240,232,.06);border:1px solid rgba(243,240,232,.22);border-radius:4px;padding:12px 14px;color:var(--bone);font-family:var(--sans);font-size:.95rem}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--seaglass);outline-offset:0;border-color:transparent}
+select option{color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+form .btn{border:none;cursor:pointer;font-family:var(--sans);background:var(--bone);color:var(--ink);width:fit-content}
+form .btn:hover{background:var(--seaglass);color:var(--bone)}
+@media(max-width:820px){.contact-grid{grid-template-columns:1fr}.f-row{grid-template-columns:1fr}}
+
+footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid var(--hairline-dark)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:26px 0;font-size:.85rem;flex-wrap:wrap}
+.foot a{color:rgba(243,240,232,.75);text-decoration:none}
+.foot a:hover{color:var(--bone)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Aloha <em>Studio</em> Productions</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#brand">Brand content</a></li>
+        <li><a href="#stays">Spaces &amp; stays</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#contact">Start a project</a>
+  </div>
+</header>
+
+<!-- ══ HERO ══════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-frame dark">
+    <!-- Hero sequence: drone flyover plays once, then the four stills
+         crossfade on a loop. Swap/reorder by editing images/hero-01..04.jpg -->
+    <div class="hero-media" aria-hidden="true">
+      <video id="heroVid" class="hm active" autoplay muted playsinline preload="auto">
+        <source src="images/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hm" style="background-image:url('images/hero-01.jpg')"></div>
+      <div class="hm" style="background-image:url('images/hero-02.jpg')"></div>
+      <div class="hm" style="background-image:url('images/hero-03.jpg')"></div>
+      <div class="hm" style="background-image:url('images/hero-04.jpg')"></div>
+    </div>
+    <div class="hero-scrim"></div>
+    <div class="hero-copy">
+      <span class="eyebrow">Visual production studio · Hawaiʻi</span>
+      <h1>Made in <em>the elements.</em></h1>
+      <p class="hero-sub">A two-person studio on the Island of Hawaiʻi. We shoot brand campaigns where products prove themselves — and the hotels, resorts, and rentals people cross oceans to stay in.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#brand">See the work</a>
+        <a class="btn btn-ghost" href="#contact">Start a project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ THE SPLIT — two ways in ═══════════════════ -->
+<section class="split" style="padding:0">
+  <a href="#brand" class="dark">
+    <div class="ph"><span><strong>images/brand-01.jpg</strong>Signature brand frame — gear in surf, on lava, in rain. The Yeti-in-the-shorebreak shot.</span></div>
+    <img src="images/brand-01.jpg" alt="Product photographed in Hawaiʻi surf" onerror="this.remove()" onload="this.previousElementSibling.remove()">
+    <div class="split-scrim"></div>
+    <div class="split-copy">
+      <span class="eyebrow">For brands</span>
+      <h2>Content shot where it counts.</h2>
+      <p>Campaign stills and motion for gear, outdoor, and lifestyle brands — in salt water, on lava rock, at first light.</p>
+      <span class="go">Brand content →</span>
+    </div>
+  </a>
+  <a href="#stays">
+    <div class="ph"><span><strong>images/stay-01.jpg</strong>Signature hospitality frame — lanai, pool, or suite at golden hour.</span></div>
+    <img src="images/stay-01.jpg" alt="Hawaiʻi resort at golden hour" onerror="this.remove()" onload="this.previousElementSibling.remove()">
+    <div class="split-scrim"></div>
+    <div class="split-copy">
+      <span class="eyebrow">For hospitality</span>
+      <h2>Photos guests book on sight.</h2>
+      <p>Interiors, aerials, and twilight for hotels, inns, and vacation rentals across the Hawaiian Islands.</p>
+      <span class="go">Spaces &amp; stays →</span>
+    </div>
+  </a>
+</section>
+
+<!-- ══ BRAND CONTENT (dark world) ════════════════ -->
+<section class="dark" id="brand">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Brand content</span>
+      <h2>Your product, tested by the island.</h2>
+      <p class="lede">Studio shots tell people what a product looks like. The elements tell them what it's made of. We build campaign imagery around proof — durability, performance, and place — with the Pacific as the test bench.</p>
+    </div>
+    <div class="work-grid">
+      <figure class="piece p-wide">
+        <div class="frame">
+          <div class="ph"><span><strong>images/brand-02.jpg</strong>Wide action frame — product/athlete in environment, landscape</span></div>
+          <img src="images/brand-02.jpg" alt="Aerial of red 4x4 on a Hawaiian coastline" onerror="this.remove()" onload="this.previousElementSibling.remove()">
+        </div>
+        <figcaption class="field-note"><b>№ 01</b><span class="dot">·</span>Aerial<span class="dot">·</span>west coast<span class="dot">·</span>DJI</figcaption>
+      </figure>
+      <figure class="piece p-tall">
+        <div class="frame">
+          <div class="ph"><span><strong>images/brand-03.jpg</strong>Vertical detail — texture, salt spray, product close</span></div>
+          <img src="images/brand-03.jpg" alt="Red 4x4 low-angle detail in storm light" onerror="this.remove()" onload="this.previousElementSibling.remove()">
+        </div>
+        <figcaption class="field-note"><b>№ 02</b><span class="dot">·</span>Low angle<span class="dot">·</span>storm light</figcaption>
+      </figure>
+    </div>
+    <div class="caps">
+      <span class="cap">Campaign stills</span>
+      <span class="cap">Motion &amp; vertical reels</span>
+      <span class="cap">Aerial — FAA Part 107</span>
+      <span class="cap">Lifestyle &amp; athlete</span>
+      <span class="cap">Location scouting</span>
+      <span class="cap">Post &amp; color</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SPACES & STAYS (light world) ══════════════ -->
+<section id="stays">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Spaces &amp; stays</span>
+      <h2>The property, at its best hour.</h2>
+      <p class="lede">Guests decide with their eyes, in seconds. We photograph hotels, inns, and vacation rentals the way guests want to imagine staying in them — sequenced around your property's light, delivered to OTA and brand specs, licensed for commercial use without expiry.</p>
+    </div>
+    <div class="work-grid">
+      <figure class="piece p-half">
+        <div class="frame">
+          <div class="ph"><span><strong>images/stay-02.jpg</strong>Interior or lanai — landscape, golden hour</span></div>
+          <img src="images/stay-02.jpg" alt="Warm boutique suite with balcony and palm view" onerror="this.remove()" onload="this.previousElementSibling.remove()">
+        </div>
+        <figcaption class="field-note"><b>№ 03</b><span class="dot">·</span>Suite study<span class="dot">·</span>morning light</figcaption>
+      </figure>
+      <figure class="piece p-half">
+        <div class="frame">
+          <div class="ph"><span><strong>images/stay-03.jpg</strong>Twilight exterior or drone aerial — landscape</span></div>
+          <img src="images/stay-03.jpg" alt="Resort pool at blue hour" onerror="this.remove()" onload="this.previousElementSibling.remove()">
+        </div>
+        <figcaption class="field-note"><b>№ 04</b><span class="dot">·</span>Blue hour<span class="dot">·</span>pool deck</figcaption>
+      </figure>
+    </div>
+    <div class="caps light-caps">
+      <span class="cap">Interiors &amp; exteriors</span>
+      <span class="cap">Drone aerials</span>
+      <span class="cap">True twilight</span>
+      <span class="cap">Lifestyle in-use frames</span>
+      <span class="cap">Vertical reels for social</span>
+      <span class="cap">Property film</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SPEC CAMPAIGNS ═══════════════ EDIT-PROJECTS ═ -->
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Field projects</span>
+      <h2>Campaigns we built because nobody asked us to.</h2>
+      <p class="lede">Self-initiated shoots, run exactly like client work — a brief, a shot plan, a full edit. This is how we test ideas, and how you see precisely what your brand would get.</p>
+    </div>
+    <div class="proj-grid">
+      <a class="proj" href="#contact">
+        <div class="frame">
+          <div class="ph"><span><strong>images/project-01.jpg</strong>Hero frame from spec campaign #1 — e.g. cooler in the shorebreak</span></div>
+          <img src="images/project-01.jpg" alt="Saltproof spec campaign hero frame" onerror="this.remove()" onload="this.previousElementSibling.remove()">
+        </div>
+        <div class="proj-body">
+          <span class="proj-tag">Studio-initiated</span>
+          <h3>Saltproof</h3>
+          <p>A durability study. One cooler, three days of Pacific shorebreak, zero mercy — stills and a 45-second cut built like a product launch.</p>
+        </div>
+      </a>
+      <a class="proj" href="#contact">
+        <div class="frame">
+          <div class="ph"><span><strong>images/project-02.jpg</strong>Hero frame from spec campaign #2 — e.g. boots/pack on lava at dawn</span></div>
+          <img src="images/project-02.jpg" alt="First Light spec campaign hero frame" onerror="this.remove()" onload="this.previousElementSibling.remove()">
+        </div>
+        <div class="proj-body">
+          <span class="proj-tag">Studio-initiated</span>
+          <h3>First Light</h3>
+          <p>Trail gear across a lava field before sunrise — a study in texture, weather, and the hour most brands never shoot in.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PASSION PROJECT ═══════════════ EDIT-PASSION ═ -->
+<section class="passion">
+  <div class="passion-frame dark">
+    <div class="ph"><span><strong>images/passion.jpg</strong>Wild Hawaiʻi — native forest, coastline, wildlife. The frame that shows why you moved here.</span></div>
+    <img src="images/passion.jpg" alt="Green sea turtle coming ashore" onerror="this.remove()" onload="this.previousElementSibling.remove()">
+    <div class="passion-scrim"></div>
+    <div class="passion-copy">
+      <span class="eyebrow">Ongoing field work</span>
+      <h2><em>Kīpuka</em> — a document of wild Hawaiʻi.</h2>
+      <p>A kīpuka is an island of old-growth forest spared by a lava flow — life holding its ground. This is our long-term project photographing the island's native forests, coastlines, and the conservation work protecting them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ═════════════════════════════ EDIT-BIO ═ -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <div class="ph"><span><strong>images/about.jpg</strong>The two of you — candid, on location, mid-work. Vertical.</span></div>
+      <img src="images/about.jpg" alt="Nathan and Kayla of Aloha Studio Productions" onerror="this.remove()" onload="this.previousElementSibling.remove()">
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow" style="display:block;margin-bottom:16px">About the studio</span>
+      <h2 style="margin-bottom:22px">We traded the corporate ladder for the coastline.</h2>
+      <p class="first">Aloha Studio Productions is Nathan and Kayla — a two-person studio on the Island of Hawaiʻi, built on a bet that we'd do our best work in the place we most wanted to be.</p>
+      <p><strong>Nathan</strong> spent years in enterprise tech helping the world's biggest companies tell stories with data. That discipline runs through every production: a real brief, a shot plan sequenced to the light, and work measured by whether it moves the numbers — bookings, conversions, sell-through.</p>
+      <p><strong>Kayla</strong> is the eye in post. Every frame that leaves this studio passes through her edit — color, tone, and the restraint to know when an image is done. If our work has a signature, she's it.</p>
+      <p>In 2026 we left Houston, drove 3,000 miles of the American West with cameras rolling, and landed here. We shoot the way we chose this island — for the light, the texture, and the feeling you can't fake.</p>
+      <p class="sig">— Nathan &amp; Kayla</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ═════════════════════ EDIT-CONTACT ═ -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Start a project</span>
+      <h2 style="margin:14px 0 18px">Tell us what you make. We'll show you <em>where it belongs.</em></h2>
+      <p class="lede">Every project is scoped to the brief. Send the basics and we'll reply within one business day with an approach and availability.</p>
+      <div class="contact-meta">
+        <div><span class="label">Email</span><a href="mailto:alohastudioproductions@gmail.com">alohastudioproductions@gmail.com</a></div>
+        <div><span class="label">Instagram</span><a href="https://instagram.com/alohastudioproductions" target="_blank" rel="noopener">@alohastudioproductions</a></div>
+        <div><span class="label">Studio</span>Island of Hawaiʻi · shooting across all islands</div>
+      </div>
+    </div>
+    <!-- Form posts via formsubmit.co — free, no account.
+         First real submission emails you a one-click activation. -->
+    <form action="https://formsubmit.co/alohastudioproductions@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New project inquiry — alohastudioproductions.com">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="f-row">
+        <div><label for="f-name">Name</label><input id="f-name" name="name" type="text" required></div>
+        <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" required></div>
+      </div>
+      <div class="f-row">
+        <div>
+          <label for="f-type">Project type</label>
+          <select id="f-type" name="project_type">
+            <option>Brand campaign — stills / motion</option>
+            <option>Hotel or resort</option>
+            <option>Vacation rental / STR</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div><label for="f-when">Timeline</label><input id="f-when" name="timeline" type="text" placeholder="e.g. shooting by September"></div>
+      </div>
+      <div><label for="f-msg">The brief</label><textarea id="f-msg" name="message" placeholder="What are we shooting, where does it run, and what should it do for you?"></textarea></div>
+      <button class="btn" type="submit">Send it</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Aloha Studio Productions · Island of Hawaiʻi</span>
+    <span><a href="mailto:alohastudioproductions@gmail.com">alohastudioproductions@gmail.com</a> · <a href="https://instagram.com/alohastudioproductions" target="_blank" rel="noopener">Instagram</a></span>
+  </div>
+</footer>
+
+<script>
+/* Hero sequence: video plays once → stills crossfade forever.
+   HOLD_SECONDS controls how long each photo stays up. */
+(function(){
+  var HOLD_SECONDS = 5.5;
+  var vid = document.getElementById('heroVid');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-media .hm')).filter(function(el){return el !== vid;});
+  var i = -1, cycling = false;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(el){
+    document.querySelectorAll('.hero-media .active').forEach(function(e){e.classList.remove('active');});
+    el.classList.add('active');
+  }
+  function advance(){
+    i = (i + 1) % slides.length;
+    show(slides[i]);
+    setTimeout(advance, HOLD_SECONDS * 1000);
+  }
+  function startCycle(){ if(cycling) return; cycling = true; advance(); }
+  if(reduce){ if(vid){vid.pause();} show(slides[0]); return; }
+  if(vid){
+    vid.addEventListener('ended', startCycle);
+    vid.addEventListener('error', startCycle);
+    /* If the video hasn't started within 4s (slow connection), go to stills */
+    setTimeout(function(){ if(vid.readyState < 2 && vid.currentTime === 0){ startCycle(); } }, 4000);
+  } else { startCycle(); }
+})();
+</script>
+</body>
+</html>
