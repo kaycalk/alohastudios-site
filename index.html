@@ -39,6 +39,7 @@
 <meta property="og:title" content="Aloha Studio Productions">
 <meta property="og:description" content="Brand content shot in the elements. Hospitality photography across the Hawaiian Islands.">
 <meta property="og:image" content="images/hero-01.jpg">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..640;1,9..144,340..640&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -95,9 +96,16 @@ header{
   backdrop-filter:blur(10px);border-bottom:1px solid var(--hairline);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-family:var(--serif);font-size:1.15rem;font-weight:500;text-decoration:none;letter-spacing:-.01em}
+.logo{font-family:var(--serif);font-size:1.15rem;font-weight:500;text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo-mark{height:34px;width:auto;display:block}
 .logo em{font-style:italic;color:var(--kelp)}
 nav ul{display:flex;gap:clamp(18px,3vw,34px);list-style:none}
+.dd{position:relative}
+.dd>a::after{content:" \25BE";font-size:.7em;opacity:.6}
+.dd-menu{position:absolute;top:100%;left:-16px;padding-top:10px;display:none;min-width:150px}
+.dd-menu ul{display:flex;flex-direction:column;gap:0;background:var(--bone);border:1px solid var(--hairline);border-radius:8px;padding:8px 0;box-shadow:0 10px 30px rgba(43,42,37,.12)}
+.dd-menu a{display:block;padding:9px 18px}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{display:block}
 nav a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--ink-soft);transition:color .2s}
 nav a:hover,nav a:focus-visible{color:var(--ink)}
 .nav-cta{font-size:.9rem;font-weight:600;text-decoration:none;color:var(--bone);background:var(--ink);padding:9px 18px;border-radius:999px;transition:background .2s}
@@ -105,6 +113,11 @@ nav a:hover,nav a:focus-visible{color:var(--ink)}
 @media(max-width:760px){nav ul{display:none}}
 
 /* ── buttons ────────────────────────────────────── */
+h2 em{font-style:italic;color:var(--kelp)}
+.dark h2 em{color:var(--seaglass)}
+.passion-copy h2 em,.split-copy h2 em{color:var(--seaglass)}
+.hl{background:var(--seaglass);color:var(--bone);padding:0 .18em;border-radius:3px;font-style:normal;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lede em,.hero-sub em{font-style:italic}
 .btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;padding:13px 26px;border-radius:999px;transition:all .2s}
 .btn-solid{background:var(--bone);color:var(--ink)}
 .btn-solid:hover{background:var(--sand)}
@@ -153,7 +166,7 @@ video.hm{object-fit:cover;width:100%;height:100%}
 .split .ph,.split img{position:absolute;inset:0}
 .split img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .split a:hover img{transform:scale(1.03)}
-.split-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,23,21,.7),rgba(20,23,21,.05) 55%)}
+.split-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,23,21,.88) 0%,rgba(20,23,21,.55) 34%,rgba(20,23,21,.08) 70%,transparent 100%)}
 .split-copy{position:relative;padding:clamp(26px,3vw,44px);color:var(--bone)}
 .split-copy .eyebrow{color:var(--sand)}
 .split-copy h2{margin:10px 0 8px;font-size:clamp(1.7rem,2.8vw,2.4rem)}
@@ -271,11 +284,17 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#top">Aloha <em>Studio</em> Productions</a>
+    <a class="logo" href="#top"><img class="logo-mark" src="images/logo.png" alt="">Aloha <em>Studio</em> Productions</a>
     <nav aria-label="Main">
       <ul>
         <li><a href="#brand">Brand content</a></li>
         <li><a href="#stays">Spaces &amp; stays</a></li>
+        <li class="dd"><a href="portfolio.html">Portfolio</a>
+          <div class="dd-menu"><ul>
+            <li><a href="portfolio.html#places">Places</a></li>
+            <li><a href="portfolio.html#spaces">Spaces</a></li>
+          </ul></div>
+        </li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
       </ul>
@@ -302,7 +321,7 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
     <div class="hero-copy">
       <span class="eyebrow">Visual production studio · Hawaiʻi</span>
       <h1>Made in <em>the elements.</em></h1>
-      <p class="hero-sub">A two-person studio on the Island of Hawaiʻi. We shoot brand campaigns where products prove themselves — and the hotels, resorts, and rentals people cross oceans to stay in.</p>
+      <p class="hero-sub">A two-person studio on the Island of Hawaiʻi. We shoot brand campaigns where products <em>prove themselves</em> — and the hotels, resorts, and rentals people <em>cross oceans</em> to stay in.</p>
       <div class="hero-actions">
         <a class="btn btn-solid" href="#brand">See the work</a>
         <a class="btn btn-ghost" href="#contact">Start a project</a>
@@ -319,7 +338,7 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
     <div class="split-scrim"></div>
     <div class="split-copy">
       <span class="eyebrow">For brands</span>
-      <h2>Content shot where it counts.</h2>
+      <h2>Content shot <em>where it counts.</em></h2>
       <p>Campaign stills and motion for gear, outdoor, and lifestyle brands — in salt water, on lava rock, at first light.</p>
       <span class="go">Brand content →</span>
     </div>
@@ -330,7 +349,7 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
     <div class="split-scrim"></div>
     <div class="split-copy">
       <span class="eyebrow">For hospitality</span>
-      <h2>Photos guests book on sight.</h2>
+      <h2>Photos guests book <em>on sight.</em></h2>
       <p>Interiors, aerials, and twilight for hotels, inns, and vacation rentals across the Hawaiian Islands.</p>
       <span class="go">Spaces &amp; stays →</span>
     </div>
@@ -342,8 +361,8 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Brand content</span>
-      <h2>Your product, tested by the island.</h2>
-      <p class="lede">Studio shots tell people what a product looks like. The elements tell them what it's made of. We build campaign imagery around proof — durability, performance, and place — with the Pacific as the test bench.</p>
+      <h2>Your product, <em>tested by the island.</em></h2>
+      <p class="lede">Studio shots tell people what a product looks like. The elements tell them what it's made of. We build campaign imagery around proof — durability, performance, and place — with <em>the Pacific as the test bench.</em></p>
     </div>
     <div class="work-grid">
       <figure class="piece p-wide">
@@ -377,8 +396,8 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Spaces &amp; stays</span>
-      <h2>The property, at its best hour.</h2>
-      <p class="lede">Guests decide with their eyes, in seconds. We photograph hotels, inns, and vacation rentals the way guests want to imagine staying in them — sequenced around your property's light, delivered to OTA and brand specs, licensed for commercial use without expiry.</p>
+      <h2>The property, at <em>its best hour.</em></h2>
+      <p class="lede">Guests decide with their eyes, in seconds. We photograph hotels, inns, and vacation rentals the way guests want to imagine staying in them — <em>sequenced around your property's light</em>, delivered to OTA and brand specs, licensed for commercial use without expiry.</p>
     </div>
     <div class="work-grid">
       <figure class="piece p-half">
@@ -412,8 +431,8 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Field projects</span>
-      <h2>Campaigns we built because nobody asked us to.</h2>
-      <p class="lede">Self-initiated shoots, run exactly like client work — a brief, a shot plan, a full edit. This is how we test ideas, and how you see precisely what your brand would get.</p>
+      <h2>Campaigns we built because <em>nobody asked us to.</em></h2>
+      <p class="lede">Self-initiated shoots, run <em>exactly like client work</em> — a brief, a shot plan, a full edit. This is how we test ideas, and how you see precisely what your brand would get.</p>
     </div>
     <div class="proj-grid">
       <a class="proj" href="#contact">
@@ -465,7 +484,7 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
     </div>
     <div class="about-copy">
       <span class="eyebrow" style="display:block;margin-bottom:16px">About the studio</span>
-      <h2 style="margin-bottom:22px">We traded the corporate ladder for the coastline.</h2>
+      <h2 style="margin-bottom:22px">We traded the corporate ladder for <em>the coastline.</em></h2>
       <p class="first">Aloha Studio Productions is Nathan and Kayla — a two-person studio on the Island of Hawaiʻi, built on a bet that we'd do our best work in the place we most wanted to be.</p>
       <p><strong>Nathan</strong> spent years in enterprise tech helping the world's biggest companies tell stories with data. That discipline runs through every production: a real brief, a shot plan sequenced to the light, and work measured by whether it moves the numbers — bookings, conversions, sell-through.</p>
       <p><strong>Kayla</strong> is the eye in post. Every frame that leaves this studio passes through her edit — color, tone, and the restraint to know when an image is done. If our work has a signature, she's it.</p>
