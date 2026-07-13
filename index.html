@@ -187,6 +187,19 @@ video.hm{object-fit:cover;width:100%;height:100%}
   .p-wide .frame,.p-tall .frame,.p-half .frame{aspect-ratio:4/3}
 }
 
+.frame-link{display:block;text-decoration:none;cursor:pointer}
+.to-top{
+  position:fixed;right:18px;bottom:18px;z-index:90;
+  width:46px;height:46px;border-radius:999px;border:none;cursor:pointer;
+  background:var(--ink);color:var(--bone);font-size:1.15rem;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transform:translateY(8px);
+  transition:opacity .25s,transform .25s,background .2s;
+  box-shadow:0 4px 14px rgba(30,33,31,.28);
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-top:hover{background:var(--kelp)}
+
 /* capability chips */
 .caps{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(30px,4vw,44px)}
 .cap{border:1px solid var(--hairline-dark);border-radius:999px;padding:9px 18px;font-size:.9rem;color:var(--fog)}
@@ -334,17 +347,17 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
     </div>
     <div class="work-grid">
       <figure class="piece p-wide">
-        <div class="frame">
+        <a class="frame-link" href="portfolio.html#places" aria-label="View full portfolio"><div class="frame">
           <div class="ph"><span><strong>images/brand-02.jpg</strong>Wide action frame — product/athlete in environment, landscape</span></div>
           <img src="images/brand-02.jpg" alt="Aerial of red 4x4 on a Hawaiian coastline" onerror="this.remove()" onload="this.previousElementSibling.remove()">
-        </div>
+        </div></a>
         <figcaption class="field-note"><b>№ 01</b><span class="dot">·</span>Aerial<span class="dot">·</span>west coast<span class="dot">·</span>DJI</figcaption>
       </figure>
       <figure class="piece p-tall">
-        <div class="frame">
+        <a class="frame-link" href="portfolio.html#places" aria-label="View full portfolio"><div class="frame">
           <div class="ph"><span><strong>images/brand-03.jpg</strong>Vertical detail — texture, salt spray, product close</span></div>
           <img src="images/brand-03.jpg" alt="Red 4x4 low-angle detail in storm light" onerror="this.remove()" onload="this.previousElementSibling.remove()">
-        </div>
+        </div></a>
         <figcaption class="field-note"><b>№ 02</b><span class="dot">·</span>Low angle<span class="dot">·</span>storm light</figcaption>
       </figure>
     </div>
@@ -369,17 +382,17 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
     </div>
     <div class="work-grid">
       <figure class="piece p-half">
-        <div class="frame">
+        <a class="frame-link" href="portfolio.html#spaces" aria-label="View full portfolio"><div class="frame">
           <div class="ph"><span><strong>images/stay-02.jpg</strong>Interior or lanai — landscape, golden hour</span></div>
           <img src="images/stay-02.jpg" alt="Warm boutique suite with balcony and palm view" onerror="this.remove()" onload="this.previousElementSibling.remove()">
-        </div>
+        </div></a>
         <figcaption class="field-note"><b>№ 03</b><span class="dot">·</span>Suite study<span class="dot">·</span>morning light</figcaption>
       </figure>
       <figure class="piece p-half">
-        <div class="frame">
+        <a class="frame-link" href="portfolio.html#spaces" aria-label="View full portfolio"><div class="frame">
           <div class="ph"><span><strong>images/stay-03.jpg</strong>Twilight exterior or drone aerial — landscape</span></div>
           <img src="images/stay-03.jpg" alt="Resort pool at blue hour" onerror="this.remove()" onload="this.previousElementSibling.remove()">
-        </div>
+        </div></a>
         <figcaption class="field-note"><b>№ 04</b><span class="dot">·</span>Blue hour<span class="dot">·</span>pool deck</figcaption>
       </figure>
     </div>
@@ -535,6 +548,16 @@ footer{background:var(--basalt);color:rgba(243,240,232,.55);border-top:1px solid
     /* If the video hasn't started within 4s (slow connection), go to stills */
     setTimeout(function(){ if(vid.readyState < 2 && vid.currentTime === 0){ startCycle(); } }, 4000);
   } else { startCycle(); }
+})();
+</script>
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+<script>
+(function(){
+  var top = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    top.classList.toggle('show', window.scrollY > 400);
+  }, {passive:true});
+  top.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 })();
 </script>
 </body>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ═══════════════════════════════════════════════════════════════════
+     ALOHA STUDIO PRODUCTIONS — portfolio.html
+     ───────────────────────────────────────────────────────────────────
+     TO ADD A PHOTO: drop the file in images/portfolio/, then copy any
+     <figure> block below into the right section (#places or #spaces)
+     and update the src + alt. Images lazy-load, so more photos won't
+     slow the page down. Order in the HTML = order on the page.
+     ═══════════════════════════════════════════════════════════════ -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Aloha Studio Productions</title>
+<meta name="description" content="Selected photography by Aloha Studio Productions — places and spaces across Hawaiʻi and beyond.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..640;1,9..144,340..640&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F3F0E8; --sand:#E9E2D3; --sand-deep:#DDD3BE;
+  --basalt:#1E211F; --basalt-soft:#2A2E2B;
+  --ink:#2B2A25; --ink-soft:#5C594E; --fog:rgba(243,240,232,.62);
+  --kelp:#43655C; --seaglass:#7FA095; --coral:#C4744F;
+  --hairline:rgba(43,42,37,.16); --hairline-dark:rgba(243,240,232,.14);
+  --max:1240px;
+  --serif:"Fraunces",Georgia,serif; --sans:"Instrument Sans",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{font-family:var(--sans);background:var(--bone);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:auto}
+a{color:inherit}
+::selection{background:var(--seaglass);color:var(--bone)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--kelp)}
+h1,h2{font-family:var(--serif);font-weight:420;line-height:1.06;letter-spacing:-.015em}
+h1{font-size:clamp(2.4rem,5.5vw,4.2rem)}
+h2{font-size:clamp(1.9rem,4vw,3rem)}
+.lede{font-size:clamp(1rem,1.5vw,1.18rem);color:var(--ink-soft);max-width:36em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+section{padding:clamp(64px,8vw,110px) 0}
+a:focus-visible,button:focus-visible{outline:2px solid var(--seaglass);outline-offset:3px;border-radius:2px}
+
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bone) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--hairline)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:1.15rem;font-weight:500;text-decoration:none;letter-spacing:-.01em}
+.logo em{font-style:italic;color:var(--kelp)}
+nav ul{display:flex;gap:clamp(18px,3vw,34px);list-style:none}
+nav a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--ink-soft);transition:color .2s}
+nav a:hover,nav a:focus-visible{color:var(--ink)}
+.nav-cta{font-size:.9rem;font-weight:600;text-decoration:none;color:var(--bone);background:var(--ink);padding:9px 18px;border-radius:999px;transition:background .2s}
+.nav-cta:hover{background:var(--kelp)}
+@media(max-width:760px){nav ul{display:none}}
+
+.page-head{padding:clamp(60px,8vw,100px) 0 clamp(30px,4vw,50px)}
+.page-head h1 em{font-style:italic;color:var(--kelp)}
+
+.dark{background:var(--basalt);color:var(--bone)}
+.dark .eyebrow{color:var(--seaglass)}
+.dark .lede{color:var(--fog)}
+.section-head{display:flex;flex-direction:column;gap:12px;margin-bottom:clamp(30px,4vw,50px)}
+
+/* masonry via CSS columns */
+.masonry{columns:3 300px;column-gap:clamp(14px,1.8vw,22px)}
+.masonry figure{break-inside:avoid;margin:0 0 clamp(14px,1.8vw,22px);border-radius:3px;overflow:hidden;background:var(--sand-deep);cursor:zoom-in}
+.dark .masonry figure{background:var(--basalt-soft)}
+.masonry img{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.masonry figure:hover img{transform:scale(1.025)}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(20,23,21,.94);display:none;align-items:center;justify-content:center;padding:4vmin;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:3px}
+.lightbox-close{position:absolute;top:18px;right:22px;background:none;border:none;color:var(--bone);font-size:2rem;line-height:1;cursor:pointer;font-family:var(--sans)}
+
+/* back to top */
+.to-top{
+  position:fixed;right:18px;bottom:18px;z-index:90;
+  width:46px;height:46px;border-radius:999px;border:none;cursor:pointer;
+  background:var(--ink);color:var(--bone);font-size:1.15rem;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transform:translateY(8px);
+  transition:opacity .25s,transform .25s,background .2s;
+  box-shadow:0 4px 14px rgba(30,33,31,.28);
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-top:hover{background:var(--kelp)}
+
+.cta-band{background:var(--sand);border-top:1px solid var(--hairline);text-align:left}
+.cta-band .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;padding:13px 26px;border-radius:999px;background:var(--ink);color:var(--bone);transition:background .2s}
+.btn:hover{background:var(--kelp)}
+
+footer{background:var(--basalt);color:rgba(243,240,232,.55)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:26px 0;font-size:.85rem;flex-wrap:wrap}
+.foot a{color:rgba(243,240,232,.75);text-decoration:none}
+.foot a:hover{color:var(--bone)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">Aloha <em>Studio</em> Productions</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html#brand">Brand content</a></li>
+        <li><a href="index.html#stays">Spaces &amp; stays</a></li>
+        <li><a href="#places">Places</a></li>
+        <li><a href="#spaces">Spaces</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="index.html#contact">Start a project</a>
+  </div>
+</header>
+
+<div class="wrap page-head">
+  <span class="eyebrow">Portfolio</span>
+  <h1 style="margin-top:12px">Places &amp; <em>spaces.</em></h1>
+</div>
+
+<!-- ══ PLACES (dark world) ═══════════════════════ -->
+<section class="dark" id="places">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">01 — Places</span>
+      <h2>The wild ones.</h2>
+      <p class="lede">Coastlines, summits, night skies, and the things that move through them.</p>
+    </div>
+    <div class="masonry">
+      <figure><img src="images/portfolio/pl-01.jpg" alt="Surfer riding a wave off a lava rock coastline" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-02.jpg" alt="Lava fountain erupting at night" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-11.jpg" alt="Red 4x4 low angle in storm light" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-04.jpg" alt="Milky Way and comet above coconut palms" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-05.jpg" alt="Green sea turtle coming ashore" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-03.jpg" alt="Standing above the clouds on a volcanic summit" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-12.jpg" alt="Toyota pickup under moonlit palms" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-07.jpg" alt="Golden hour shoreline with lava rock and palms" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-08.jpg" alt="Top-down aerial of palms meeting the shoreline" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-09.jpg" alt="Coastal succulent macro study" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-13.jpg" alt="Rocky coastline and town at pink dusk" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-17.jpg" alt="Aerial of a volcanic peak above a coastal town" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-14.jpg" alt="Surfers in golden sunset waves" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-20.jpg" alt="Aerial of turquoise surf against a cliffside coast" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-15.jpg" alt="Silhouette watching the sun drop into the Pacific" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-23.jpg" alt="Emerald cliffs above a valley field" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-16.jpg" alt="Lifeguard tower under a moonlit ridge" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-25.jpg" alt="Rainforest stream in full flow" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-18.jpg" alt="Aerial of reef and coastline at dusk" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-24.jpg" alt="Gulf fritillary butterfly on a yellow bloom" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-21.jpg" alt="Top-down aerial of a turquoise rock cove" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-19.jpg" alt="Monkeypod tree over picnic tables at golden hour" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-22.jpg" alt="Pink and purple sunset over tide pools" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-26.jpg" alt="Highway curving through mountain pines" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-36.jpg" alt="Silhouetted couple before an erupting Kilauea vent at dusk" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-30.jpg" alt="Storm surf breaking on black sand and lava rock" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-37.jpg" alt="Molten lava lake glowing in a volcanic crater" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-34.jpg" alt="Sunbeams through a fern forest trail" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-29.jpg" alt="Sprawling banyan tree with aerial roots" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-31.jpg" alt="Driftwood over a black sand beach" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-27.jpg" alt="Couple dancing beneath a tree canopy" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-35.jpg" alt="Inside a lava tube lit warm" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-33.jpg" alt="Coral fragment held above a rocky shoreline" loading="lazy"></figure>
+      <figure><img src="images/portfolio/pl-38.jpg" alt="Redwood giants over a forest path" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SPACES (light world) ══════════════════════ -->
+<section id="spaces">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">02 — Spaces</span>
+      <h2>The stays worth crossing an ocean for.</h2>
+      <p class="lede">Suites, pools, lodges, and the light that sells them.</p>
+    </div>
+    <div class="masonry">
+      <figure><img src="images/portfolio/sp-01.jpg" alt="Warm boutique suite with balcony and palm view" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-02.jpg" alt="Resort pool and deck at blue hour" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-04.jpg" alt="Aerial of a resort coastline at dusk" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-03.jpg" alt="Natural resort pool under midday sun" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-07.jpg" alt="Backcountry lodge glowing under a starry sky" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-06.jpg" alt="Sunlit timber lodge interior with mountain windows" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-05.jpg" alt="Snowy peaks framed in a cabin window" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-08.jpg" alt="Lodge deck with skis at sunrise" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-13.jpg" alt="Modern white resort courtyard with pool and umbrellas" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-11.jpg" alt="Timber pavilion with mountain backdrop at golden hour" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-12.jpg" alt="Hillside villa above the pines" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-10.jpg" alt="Mountain lodge residences in evening light" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-09.jpg" alt="Event tent venue in a mountain valley" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-14.jpg" alt="Shaded pergola deck with rope railings and thatched roofs" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-15.jpg" alt="Breakfast table set above the pool deck" loading="lazy"></figure>
+      <figure><img src="images/portfolio/sp-17.jpg" alt="Round window opening onto jungle greenery" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ═══════════════════════════════════════ -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2 style="font-size:clamp(1.5rem,2.6vw,2.1rem)">Want frames like these of your property or product?</h2>
+    <a class="btn" href="index.html#contact">Start a project</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Aloha Studio Productions · Island of Hawaiʻi</span>
+    <span><a href="mailto:alohastudioproductions@gmail.com">alohastudioproductions@gmail.com</a> · <a href="https://instagram.com/alohastudioproductions" target="_blank" rel="noopener">Instagram</a></span>
+  </div>
+</footer>
+
+<!-- lightbox + back to top -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Enlarged photo">
+  <button class="lightbox-close" aria-label="Close">×</button>
+  <img src="" alt="">
+</div>
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+  /* lightbox */
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('img');
+  document.querySelectorAll('.masonry figure img').forEach(function(img){
+    img.parentElement.addEventListener('click', function(){
+      lbImg.src = img.src; lbImg.alt = img.alt;
+      lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; }
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLb(); });
+
+  /* back to top */
+  var top = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    top.classList.toggle('show', window.scrollY > 400);
+  }, {passive:true});
+  top.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+</script>
+</body>
+</html>
